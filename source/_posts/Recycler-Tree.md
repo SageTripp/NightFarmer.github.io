@@ -1,4 +1,4 @@
----
+﻿---
 title: 实现基于RecyclerView的树形组件封装
 date: 2016-06-24 15:26:17
 tags: [Android, RecyclerView]
@@ -386,4 +386,5 @@ public class MainActivity extends AppCompatActivity {
 大功告成，效果图：
 我是图
 
+代码地址：https://github.com/NightFarmer/RecyclerTree
 
