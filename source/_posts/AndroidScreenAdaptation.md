@@ -1,6 +1,6 @@
 ---
 title: Android屏幕分率适配
-date: 2016-03-07 13:41:26
+date: 2014-03-07 13:41:26
 tags: [Android, 适配]
 category: Android
 ---
