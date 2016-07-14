@@ -1,6 +1,6 @@
 ---
 title: Async.js v2.0.0-pre官方文档翻译(未完成)
-date: 2016-03-11 12:41:38
+date: 2015-03-11 12:41:38
 tags: [JavaScript, Async, Doc]
 category: JavaScript
 ---

@@ -6,11 +6,11 @@ category: Android
 ---
 
 **本篇文章用于记录用于开放绘制BitMap相关的自定义控件**
-Android应用程序中有一类自定义控件是由canvas绘制bitmap来构建视图，并通触摸事件或其方法来控制绘制视图的状态。<!-- more -->
+Android应用程序中有一类自定义控件是由canvas绘制bitmap来构建视图，并通触摸事件或其方法来控制绘制视图的状态。
 本篇通过记录一个开关按钮的定义来熟悉此类自定义控件的开发流程。
 先看一下效果图：
-
-图
+![switchButton](http://nightfarmer.github.io/public/static/image/switchButton.gif)
+<!-- more -->
 
 废话不多说，首先我们定义一个叫做SwitchView的类继承自View来作为我们的自定义控件
 代码如下:
@@ -71,9 +71,7 @@ public class SwitchView extends View {
 ```
 上面这段代码并不多，在onDraw方法中先绘制背景图，然后将button按钮绘制在背景图上方，初始位置为0,0坐标
 在onMeasure方法中指定控件的宽高为背景图的宽和高，这时候我们就可以在xml布局文件中调用我们的自定义控件，
-指定资源文件后就可以看到初始状态下的UI：
-
-图
+指定资源文件后就可以看到初始状态下的UI。
 
 但是此时这个控件只有一个关闭状态，下面我们为这个控件增加打开状态并新增状态标识以及切换状态的方法
 ```java

@@ -10,9 +10,9 @@ category: Android
 最终决定以RecyclerView封装一个可服用的多级树形组件，以满足大量数据的展开折叠，以及展开折叠的动画效果。
 
 最终效果图：
-我是图
-
 <!-- more -->
+![员工效果图](http://nightfarmer.github.io/public/static/image/staffTree.gif)
+
 
 这个树形组件是在RecyclerView的基础上对Adapter进行了封装，在使用时可以使用原生的RecyclerView设定为树形结构的Adapter即可实现树形的效果。
 
@@ -384,7 +384,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 大功告成，效果图：
-我是图
+![treeDemo](http://nightfarmer.github.io/public/static/image/treetest.gif)
 
 代码地址：https://github.com/NightFarmer/RecyclerTree
 

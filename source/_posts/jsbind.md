@@ -1,6 +1,6 @@
 ---
 title: 深入浅出 妙用JavaScript中apply、call、bind
-date: 2016-03-10 13:40:59
+date: 2015-03-10 13:40:59
 tags: JavaScript
 category: JavaScript
 ---
