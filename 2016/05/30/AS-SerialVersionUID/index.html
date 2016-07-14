@@ -3,21 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>使用cocos2d引擎开发连连看的尝试 | NightFarmer&#39;s Blog</title>
+  <title>AndroidStudio 自动生成 SerialVersionUID | NightFarmer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cocos2d是一个跨平台的2d游戏引擎，支持一套代码多平台发布。这里使用这个引擎开发了一个连连看使用javascript实现A星寻路算法，根据连连看游戏规则调整A星算法，用于计算最优的连接路径以及路径转折次数。加入了游戏音效，游戏关卡，多样化的游戏素材并没有添加。
-连连看测试效果代码地址：[https://github.com/NightFarmer/Lianliankan]">
+  <meta name="description" content="上篇提到需要本地序列化的类实现Serializable接口时需要声明serialVersionUID变量，本篇简单说一下如何在 Android Studio 中自动帮助我们生成(不重复的) SerialVersionUID。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用cocos2d引擎开发连连看的尝试">
-<meta property="og:url" content="http://nightfarmer.github.io/2016/03/06/makelianliankan1/index.html">
+<meta property="og:title" content="AndroidStudio 自动生成 SerialVersionUID">
+<meta property="og:url" content="http://nightfarmer.github.io/2016/05/30/AS-SerialVersionUID/index.html">
 <meta property="og:site_name" content="NightFarmer's Blog">
-<meta property="og:description" content="cocos2d是一个跨平台的2d游戏引擎，支持一套代码多平台发布。这里使用这个引擎开发了一个连连看使用javascript实现A星寻路算法，根据连连看游戏规则调整A星算法，用于计算最优的连接路径以及路径转折次数。加入了游戏音效，游戏关卡，多样化的游戏素材并没有添加。
-连连看测试效果代码地址：[https://github.com/NightFarmer/Lianliankan]">
-<meta property="og:updated_time" content="2016-07-13T05:23:27.256Z">
+<meta property="og:description" content="上篇提到需要本地序列化的类实现Serializable接口时需要声明serialVersionUID变量，本篇简单说一下如何在 Android Studio 中自动帮助我们生成(不重复的) SerialVersionUID。">
+<meta property="og:image" content="http://nightfarmer.github.io/public/static/image/开启SerialVersionUID提示.png">
+<meta property="og:image" content="http://nightfarmer.github.io/public/static/image/SerialVersionUID提示.png">
+<meta property="og:image" content="http://nightfarmer.github.io/public/static/image/显示生成SerialVersionUID菜单.png">
+<meta property="og:image" content="http://nightfarmer.github.io/public/static/image/自动生成SerialVersionUID.png">
+<meta property="og:updated_time" content="2016-07-14T02:33:34.620Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用cocos2d引擎开发连连看的尝试">
-<meta name="twitter:description" content="cocos2d是一个跨平台的2d游戏引擎，支持一套代码多平台发布。这里使用这个引擎开发了一个连连看使用javascript实现A星寻路算法，根据连连看游戏规则调整A星算法，用于计算最优的连接路径以及路径转折次数。加入了游戏音效，游戏关卡，多样化的游戏素材并没有添加。
-连连看测试效果代码地址：[https://github.com/NightFarmer/Lianliankan]">
+<meta name="twitter:title" content="AndroidStudio 自动生成 SerialVersionUID">
+<meta name="twitter:description" content="上篇提到需要本地序列化的类实现Serializable接口时需要声明serialVersionUID变量，本篇简单说一下如何在 Android Studio 中自动帮助我们生成(不重复的) SerialVersionUID。">
+<meta name="twitter:image" content="http://nightfarmer.github.io/public/static/image/开启SerialVersionUID提示.png">
   
     <link rel="alternative" href="/atom.xml" title="NightFarmer&#39;s Blog" type="application/atom+xml">
   
@@ -149,7 +151,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 15px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 17.5px;">RecyclerView</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 12.5px;">okhttp</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 15px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
+                        <a href="/tags/AS/" style="font-size: 12.5px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 15px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 17.5px;">RecyclerView</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 12.5px;">okhttp</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/干货/" style="font-size: 10px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 17.5px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
                     </div>
                 </section>
                 
@@ -225,11 +227,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-makelianliankan1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-AS-SerialVersionUID" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/06/makelianliankan1/" class="article-date">
-      <time datetime="2016-03-06T09:03:37.000Z" itemprop="datePublished">2016-03-06</time>
+      <a href="/2016/05/30/AS-SerialVersionUID/" class="article-date">
+      <time datetime="2016-05-30T12:26:17.000Z" itemprop="datePublished">2016-05-30</time>
 </a>
     </div>
   
@@ -242,7 +244,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      使用cocos2d引擎开发连连看的尝试
+      AndroidStudio 自动生成 SerialVersionUID
     </h1>
   
 
@@ -250,10 +252,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocos/">cocos</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AS/">AS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/干货/">干货</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -263,8 +269,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>cocos2d是一个跨平台的2d游戏引擎，支持一套代码多平台发布。<br>这里使用这个引擎开发了一个连连看<br>使用javascript实现A星寻路算法，根据连连看游戏规则调整A星算法，用于计算最优的连接路径以及路径转折次数。<br>加入了游戏音效，游戏关卡，多样化的游戏素材并没有添加。</p>
-<p><a href="http://nightfarmer.github.io/public/cocospreview/Lianliankan/">连连看测试效果</a><br>代码地址：[<a href="https://github.com/NightFarmer/Lianliankan" target="_blank" rel="external">https://github.com/NightFarmer/Lianliankan</a>]</p>
+        <p>上篇提到需要本地序列化的类实现Serializable接口时需要声明serialVersionUID变量，本篇简单说一下如何在 Android Studio 中自动帮助我们生成(不重复的) SerialVersionUID。<a id="more"></a><br>打开 Settings，切换到 Editor-&gt;Inspections-&gt;Java-&gt;Serialization issues，找到 Serializationzable class without ‘serialVersionUID’，将其勾选即可，如图：</p>
+<p><img src="http://nightfarmer.github.io/public/static/image/开启SerialVersionUID提示.png" alt="开启SerialVersionUID提示"></p>
+<p>其实这个意思就是在代码检查时看是否有 serialVersionUID 这个字段，没有就提示你。</p>
+<p><img src="http://nightfarmer.github.io/public/static/image/SerialVersionUID提示.png" alt="SerialVersionUID提示"></p>
+<p>之后在实现了 Serializable 接口的类名上打开 Android Studio 的智能提示(智能检查)，就会多出了 Add ‘serialVersionUID’ field，如图：</p>
+<p><img src="http://nightfarmer.github.io/public/static/image/显示生成SerialVersionUID菜单.png" alt="显示生成SerialVersionUID菜单"></p>
+<p>生成之后的代码</p>
+<p><img src="http://nightfarmer.github.io/public/static/image/自动生成SerialVersionUID.png" alt="自动生成SerialVersionUID"></p>
 
       
     </div>
@@ -277,15 +289,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/10/jsbind/">
-                    深入浅出 妙用JavaScript中apply、call、bind
+                <a href="/2016/06/24/Recycler-Tree/">
+                    实现基于RecyclerView的树形组件封装
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/01/15/OKHttpForm/">
-                    OKHttp3-多文件form表单形式上传的使用
+                <a href="/2016/05/30/AndroidLocalData/">
+                    android轻量级本地数据存储的实现
                 </a>
             </div>
         
@@ -360,7 +372,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/06/makelianliankan1/" data-title="使用cocos2d引擎开发连连看的尝试" data-url="http://nightfarmer.github.io/2016/03/06/makelianliankan1/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/30/AS-SerialVersionUID/" data-title="AndroidStudio 自动生成 SerialVersionUID" data-url="http://nightfarmer.github.io/2016/05/30/AS-SerialVersionUID/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -384,7 +396,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/10/jsbind/" title="上一篇: 深入浅出 妙用JavaScript中apply、call、bind">
+            <a href="/2016/06/24/Recycler-Tree/" title="上一篇: 实现基于RecyclerView的树形组件封装">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -392,13 +404,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/15/OKHttpForm/" title="下一篇: OKHttp3-多文件form表单形式上传的使用">
+            <a href="/2016/05/30/AndroidLocalData/" title="下一篇: android轻量级本地数据存储的实现">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/24/Recycler-Tree/">实现基于RecyclerView的树形组件封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/30/AndroidLocalData/">android轻量级本地数据存储的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/25/ReactNative-libs/">ReactNative的一些参考资料以及第三方库</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/17/Kotlin-anko/">使用Kotlin开发Android之anko扩展</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/EventBus/">通过EventBus实现android各组件间数据通讯</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/12/Kotlin-yf/">使用Kotlin开发Android的常用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/25/Kotlin-android-EV/">AndroidStudio-Kotlin插件安装配置及工程配置调整</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/js-android/">使用JavaScript反射调用Android应用Native代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/JitpackUse/">发布个人代码库到jitpack供gradle依赖调用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/12/MoneyInput/">android实现限制数值输入范围的金额EditText控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/AsyncDoc/">Async.js v2.0.0-pre官方文档翻译(未完成)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/jsbind/">深入浅出 妙用JavaScript中apply、call、bind</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/makelianliankan1/">使用cocos2d引擎开发连连看的尝试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/OKHttpForm/">OKHttp3-多文件form表单形式上传的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/OKHttpDownload/">OKHttp3-扩展带有进度监听的下载回调</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/24/AndroidPaintView/">自定义控件-使用Canvas绘图定义一个手写板</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/20/MakeSwitchButton/">自定义控件-定义一个开关按钮</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/23/RecyclerView/">使用RecyclerView实现Grid节点的拖拽排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/08/Recycler-pbl/">使用RecyclerView实现无线滚动瀑布流</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/Recycler-Grid/">RecyclerView的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/20/AS-HotKey/">AndroidStudio常用快捷键记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/03/07/AndroidScreenAdaptation/">Android屏幕分率适配</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/03/01/HelloBlog/">Hello Blog</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/24/Recycler-Tree/">实现基于RecyclerView的树形组件封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/30/AS-SerialVersionUID/">AndroidStudio 自动生成 SerialVersionUID</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/30/AndroidLocalData/">android轻量级本地数据存储的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/25/ReactNative-libs/">ReactNative的一些参考资料以及第三方库</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/17/Kotlin-anko/">使用Kotlin开发Android之anko扩展</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/EventBus/">通过EventBus实现android各组件间数据通讯</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/12/Kotlin-yf/">使用Kotlin开发Android的常用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/25/Kotlin-android-EV/">AndroidStudio-Kotlin插件安装配置及工程配置调整</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/js-android/">使用JavaScript反射调用Android应用Native代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/JitpackUse/">发布自己的开源库到jitpack供gradle依赖调用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/12/MoneyInput/">android实现限制数值输入范围的金额EditText控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/View-onMeasure/">源码解析自定义View的onMeasure方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/OKHttpForm/">OKHttp3-多文件form表单形式上传的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/OKHttpDownload/">OKHttp3-扩展带有进度监听的下载回调</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/24/AndroidPaintView/">自定义控件-使用Canvas绘图定义一个手写板</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/20/MakeSwitchButton/">自定义控件-定义一个开关按钮</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/23/RecyclerView/">使用RecyclerView实现Grid节点的拖拽排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/08/Recycler-pbl/">使用RecyclerView实现无限滚动瀑布流</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/Recycler-Grid/">RecyclerView的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/20/AS-HotKey/">AndroidStudio常用快捷键记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/11/AsyncDoc/">Async.js v2.0.0-pre官方文档翻译(未完成)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/jsbind/">深入浅出 妙用JavaScript中apply、call、bind</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/06/makelianliankan1/">使用cocos2d引擎开发连连看的尝试</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/03/07/AndroidScreenAdaptation/">Android屏幕分率适配</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/03/01/HelloBlog/">Hello Blog</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

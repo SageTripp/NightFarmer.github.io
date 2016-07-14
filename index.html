@@ -145,7 +145,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 15px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 17.5px;">RecyclerView</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 12.5px;">okhttp</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 15px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
+                        <a href="/tags/AS/" style="font-size: 12.5px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 15px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 17.5px;">RecyclerView</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 12.5px;">okhttp</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/干货/" style="font-size: 10px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 17.5px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
                     </div>
                 </section>
                 
@@ -250,7 +250,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>最近因项目需求需要一个可以进行展开收缩的多级树形控件，首先考虑的是ExpandableListView，但是这个控件只支持一级展开不符合需求，<br>之后在百度谷歌了一下发现有用List实现的多级树形控件，预览效果是不错的，但是经测试大量数据展开时会造成严重的卡顿现象，也不符合需求。<br>最终决定以RecyclerView封装一个可服用的多级树形组件，以满足大量数据的展开折叠，一级展开折叠的动画效果。</p>
+              <p>最近因项目需求需要一个可以进行展开收缩的多级树形控件，首先考虑的是ExpandableListView，但是这个控件只支持一级展开不符合需求，<br>之后在百度谷歌了一下发现有用List实现的多级树形控件，预览效果是不错的，但是经测试大量数据展开时会造成严重的卡顿现象，也不符合需求。<br>最终决定以RecyclerView封装一个可服用的多级树形组件，以满足大量数据的展开折叠，以及展开折叠的动画效果。</p>
 <p>最终效果图：<br>我是图</p>
           
       
@@ -272,6 +272,71 @@
       
         <p class="article-more-link">
           <a  href="/2016/06/24/Recycler-Tree/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-AS-SerialVersionUID" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/30/AS-SerialVersionUID/" class="article-date">
+      <time datetime="2016-05-30T12:26:17.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/30/AS-SerialVersionUID/">AndroidStudio 自动生成 SerialVersionUID</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>上篇提到需要本地序列化的类实现Serializable接口时需要声明serialVersionUID变量，本篇简单说一下如何在 Android Studio 中自动帮助我们生成(不重复的) SerialVersionUID。
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AS/">AS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/干货/">干货</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/30/AS-SerialVersionUID/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -506,7 +571,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+              <p>EventBus就是publish/subscribe消息总线，主要功能是替代Intent,Handler,BroadCast在Fragment，Activity，Service，线程之间传递消息。<br>它的三要素：<br>Event：事件。可以是任何的对象。<br>Subscriber：事件订阅者，接收特定的事件。方法以onEvent**开头，一共有四个方法onEvent，onEventMainThread，onEventBackgroundThread，onEventAsync。它们之间的区别在于在不同的线程。等会会有一一举例。<br>Publisher:事件发布者，用于通知Subscriber有事件发生，可以在任何的地方发布事件。使用也是简单，只要调用post(Object)方法就可以了。<br>
+          
       
     </div>
     
@@ -523,6 +589,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EventBus/">EventBus</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/13/EventBus/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -626,7 +696,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+              <p>Kotlin 是一个基于 JVM 的新的编程语言，由 JetBrains 开发。<br>Kotlin可以编译成Java字节码，也可以编译成JavaScript，方便在没有JVM的设备上运行。<br>JetBrains，作为目前广受欢迎的Java IDE IntelliJ 的提供商，在 Apache 许可下已经开源其Kotlin 编程语言。</p>
+<p>总体说, 对于大部分普通程序员, 可算比较完美了(综合考量语言自身\平台及库\IDE等工具\背后支持公司). 目前主要风格还是偏OO, 如果可以再偏FP一点会更好. 像是一个Scala与C#的合体, 比Scala简单得多; 比C#更干净, 可谓是android平台的swift。<br>
+          
       
     </div>
     
@@ -643,6 +715,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kotlin/">Kotlin</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/25/Kotlin-android-EV/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -736,7 +812,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/16/JitpackUse/">发布个人代码库到jitpack供gradle依赖调用</a>
+      <a class="article-title" href="/2016/03/16/JitpackUse/">发布自己的开源库到jitpack供gradle依赖调用</a>
     </h1>
   
 
@@ -761,66 +837,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gradle/">gradle</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-MoneyInput" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/12/MoneyInput/" class="article-date">
-      <time datetime="2016-03-12T12:16:17.000Z" itemprop="datePublished">2016-03-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/12/MoneyInput/">android实现限制数值输入范围的金额EditText控制</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
     </div>
 
       
