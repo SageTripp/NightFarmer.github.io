@@ -1,8 +1,8 @@
 ---
 title: Hello Blog
 date: 2014-03-01 19:23:12
-tags: test
-category: hehe
+tags: 干货
+category: JavaScript
 ---
 呵呵哒 真是任性  ![heheda](http://static.tieba.baidu.com/tb/editor/images/client/image_emoticon25.png)
 <!-- more -->
