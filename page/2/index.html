@@ -145,7 +145,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AS/" style="font-size: 12px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 14px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 18px;">RecyclerView</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 12px;">okhttp</a> <a href="/tags/列表动画，RecyclerView/" style="font-size: 14px;">列表动画，RecyclerView</a> <a href="/tags/干货/" style="font-size: 12px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 16px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
+                        <a href="/tags/AS/" style="font-size: 12px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 14px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 18px;">RecyclerView</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 12px;">okhttp</a> <a href="/tags/列表动画，RecyclerView/" style="font-size: 14px;">列表动画，RecyclerView</a> <a href="/tags/动画，自定义控件/" style="font-size: 10px;">动画，自定义控件</a> <a href="/tags/干货/" style="font-size: 12px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 16px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
                     </div>
                 </section>
                 
@@ -343,6 +343,71 @@
 
 
   
+    <article id="post-RandomShowTextView" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/13/RandomShowTextView/" class="article-date">
+      <time datetime="2016-03-13T04:46:44.000Z" itemprop="datePublished">2016-03-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/13/RandomShowTextView/">实现一个随机字符显现/隐藏的TextView</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>偶然看到一个非常不错的特效，尝试着实现了并记录下开发过程。<br>效果图：<br><img src="http://nightfarmer.github.io/public/static/image/RandomShowTextView.gif" alt="随机字符显现/隐藏"></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画，自定义控件/">动画，自定义控件</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/13/RandomShowTextView/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-BaseItemAnimator" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -370,13 +435,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><a href="/2016/03/13/ItemAnimator/">上篇</a>提到通过复制DefaultItemAnimator的源码来实现自定义的ItemAnimator。<br>本篇用来记录如何对ItemAnimator的实现进行再次的抽象封装，以适用于更加便捷的使用。</p>
-<p>为了能够灵活定义不同的动画，我们需要把实现animator的部分抽象出来放到子类中处理。<br>下面以add的动画为例<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">animateAdd</span><span class="params">(<span class="keyword">final</span> ViewHolder holder)</span> </span>&#123;</div><div class="line">    resetAnimation(holder);</div><div class="line">    ViewCompat.setAlpha(holder.itemView, <span class="number">0</span>);</div><div class="line">    mPendingAdditions.add(holder);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">animateAddImpl</span><span class="params">(<span class="keyword">final</span> ViewHolder holder)</span> </span>&#123;</div><div class="line">    <span class="keyword">final</span> View view = holder.itemView;</div><div class="line">    <span class="keyword">final</span> ViewPropertyAnimatorCompat animation = ViewCompat.animate(view);</div><div class="line">    mAddAnimations.add(holder);</div><div class="line">    animation.alpha(<span class="number">1</span>).setDuration(getAddDuration()).</div><div class="line">            setListener(<span class="keyword">new</span> VpaListenerAdapter() &#123;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationStart</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                    dispatchAddStarting(holder);</div><div class="line">                &#125;</div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationCancel</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                    ViewCompat.setAlpha(view, <span class="number">1</span>);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="meta">@Override</span></div><div class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                    animation.setListener(<span class="keyword">null</span>);</div><div class="line">                    dispatchAddFinished(holder);</div><div class="line">                    mAddAnimations.remove(holder);</div><div class="line">                    dispatchFinishedWhenDone();</div><div class="line">                &#125;</div><div class="line">            &#125;).start();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们把调整动画的时候需要修改的地方放到抽象方法中，而ItemAnimator需要对动画的监听我们放到一个定义好的Listener中供直接调用，<br>那么我们代码就可以变成这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeAnimateAdd</span><span class="params">(RecyclerView.ViewHolder holder)</span></span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">animateAdd</span><span class="params">(<span class="keyword">final</span> RecyclerView.ViewHolder holder)</span> </span>&#123;</div><div class="line">    resetAnimation(holder);</div><div class="line">    beforeAnimateAdd(holder);<span class="comment">//调用抽象方法，让子类来提供具体实现</span></div><div class="line">    mPendingAdditions.add(holder);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">runAnimateAdd</span><span class="params">(RecyclerView.ViewHolder holder)</span></span>&#123;&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">animateAddImpl</span><span class="params">(<span class="keyword">final</span> RecyclerView.ViewHolder holder)</span> </span>&#123;</div><div class="line">    runAnimateAdd(holder);<span class="comment">//调用抽象方法，让子类来提供具体实现</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">protected</span> <span class="class"><span class="keyword">class</span> <span class="title">DefaultAddVpaListener</span> <span class="keyword">extends</span> <span class="title">VpaListenerAdapter</span> </span>&#123;</div><div class="line">    RecyclerView.ViewHolder mViewHolder;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DefaultAddVpaListener</span><span class="params">(<span class="keyword">final</span> RecyclerView.ViewHolder holder)</span> </span>&#123;</div><div class="line">        mViewHolder = holder;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationStart</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">        dispatchAddStarting(mViewHolder);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationCancel</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">        ViewHelper.clear(view);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">        ViewHelper.clear(view);</div><div class="line">        dispatchAddFinished(mViewHolder);</div><div class="line">        mAddAnimations.remove(mViewHolder);</div><div class="line">        dispatchFinishedWhenDone();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这样我们就可用把这个类定义为BaseItemAnimator，我们实现自定义动画处理器的时候继承这个类，并只实现具体的动画即可<br>比如这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by zhangfan on 16-7-18.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeftInAnimator</span> <span class="keyword">extends</span> <span class="title">BaseItemAnimator</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeAnimateAdd</span><span class="params">(RecyclerView.ViewHolder holder)</span> </span>&#123;</div><div class="line">        ViewCompat.setTranslationX(holder.itemView, -holder.itemView.getRootView().getWidth());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">runAnimateAdd</span><span class="params">(RecyclerView.ViewHolder holder)</span> </span>&#123;</div><div class="line">        ViewCompat.animate(holder.itemView)</div><div class="line">                .translationX(<span class="number">0</span>)</div><div class="line">                .setDuration(getAddDuration())</div><div class="line">                .setInterpolator(<span class="keyword">new</span> OvershootInterpolator(<span class="number">1</span>))<span class="comment">//会让我们的动画有一个酷炫的回弹效果</span></div><div class="line">                .setListener(<span class="keyword">new</span> DefaultAddVpaListener(holder))<span class="comment">//一定不能少</span></div><div class="line">                .start();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>相对于上篇的复制整个java文件来说，这样写无疑是更加的简便了，上面只是抽象了item的add动画，其他类型的动画同理可得。<br>上面的代码用到了一个叫ViewHelper.clear(view)的方法，因为我们抽出的动画监听中onAnimationCancel时我们并不知道当前执行的动画是何种类型，所以这时候定义了一个叫做ViewHelper.clear的方法来让view的所有属性都回归原始，贴上代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewHelper</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">    ViewCompat.setAlpha(v, <span class="number">1</span>);</div><div class="line">    ViewCompat.setScaleY(v, <span class="number">1</span>);</div><div class="line">    ViewCompat.setScaleX(v, <span class="number">1</span>);</div><div class="line">    ViewCompat.setTranslationY(v, <span class="number">0</span>);</div><div class="line">    ViewCompat.setTranslationX(v, <span class="number">0</span>);</div><div class="line">    ViewCompat.setRotation(v, <span class="number">0</span>);</div><div class="line">    ViewCompat.setRotationY(v, <span class="number">0</span>);</div><div class="line">    ViewCompat.setRotationX(v, <span class="number">0</span>);</div><div class="line">    ViewCompat.setPivotY(v, v.getMeasuredHeight() / <span class="number">2</span>);</div><div class="line">    ViewCompat.setPivotX(v, v.getMeasuredWidth() / <span class="number">2</span>);</div><div class="line">    ViewCompat.animate(v).setInterpolator(<span class="keyword">null</span>).setStartDelay(<span class="number">0</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+              <p><a href="/2016/03/13/ItemAnimator/">上篇</a>提到通过复制DefaultItemAnimator的源码来实现自定义的ItemAnimator。<br>本篇用来记录如何对ItemAnimator的实现进行再次的抽象封装，以适用于更加便捷的使用。</p>
+<p>为了能够灵活定义不同的动画，我们需要把实现animator的部分抽象出来放到子类中处理。<br>
+          
       
     </div>
     
@@ -393,6 +454,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/列表动画，RecyclerView/">列表动画，RecyclerView</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/13/BaseItemAnimator/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -437,7 +502,7 @@
       
           
               <p>之前提到过RecyclerView给我们提供了插拔式的，高度解耦的，异常灵活的数据集合展示控件。<br>这次会根据google提供的抽象的插拔接口来对RecyclerView数据集合item的创建/移除进行动画扩展，<br>并在此基础上对次扩展进行再次的抽象封装以适用于日常的使用。<br>依照管理，效果图：</p>
-<p>图：图：</p>
+<p><img src="http://nightfarmer.github.io/public/static/image/leftInAnimator.gif" alt="从左划入动画效果"> <img src="http://nightfarmer.github.io/public/static/image/inoutAnimator.gif" alt="从小变大动画效果"></p>
           
       
     </div>
@@ -795,74 +860,9 @@
 
 
   
-    <article id="post-AndroidPaintView" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/24/AndroidPaintView/" class="article-date">
-      <time datetime="2015-08-24T07:26:17.000Z" itemprop="datePublished">2015-08-24</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/24/AndroidPaintView/">自定义控件-使用Canvas绘图定义一个手写板</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>最近因项目需求，需要有一个控件，可用提供用户手写签名并保持保存为图片。<br>听上去是一个非常酷炫的功能，然而实现起来其实并不复杂，下面会记录一下这个控件的开发过程。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/24/AndroidPaintView/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
