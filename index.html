@@ -145,7 +145,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AS/" style="font-size: 12.5px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 15px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 17.5px;">RecyclerView</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 12.5px;">okhttp</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/干货/" style="font-size: 10px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 17.5px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
+                        <a href="/tags/AS/" style="font-size: 12px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 14px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 18px;">RecyclerView</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 12px;">okhttp</a> <a href="/tags/列表动画，RecyclerView/" style="font-size: 14px;">列表动画，RecyclerView</a> <a href="/tags/干货/" style="font-size: 12px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 16px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
                     </div>
                 </section>
                 
@@ -484,6 +484,71 @@
 
 
   
+    <article id="post-RecyAnim" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/24/RecyAnim/" class="article-date">
+      <time datetime="2016-05-24T07:26:17.000Z" itemprop="datePublished">2016-05-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/24/RecyAnim/">给滚动列表项增加渐显载入动画</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>之前还在使用ListView作为展示列表数据的控件时尝试过给列表项增加载入动画，但是ListView是一个效果比较单一的控件，<br>在想要实现表格布局或者是瀑布流的载入动画的时候还要分别给GridView和瀑布流控件分别实现，这是比较麻烦的。<br>在之前的博客中提到过RecyclerView这个控件，这是在V7包中提供的一个功能非常强大而且扩展性非常强的一个控件，<br>用它可以实现列表、表格、瀑布流等效果，只需要指定不同的LayoutManager即可，具体的用法在之前的博客中已经记录过，<br>在这里就不再赘述。<br>今天记录的是给RecyclerView增加item的载入动画，这样在借助RecyclerView的特性下在不同效果的布局模式中就可以显示相同的效果，<br>而不用分别进行实现，下面是效果：<br><img src="http://nightfarmer.github.io/public/static/image/listanim.gif" alt="列表动画"> <img src="http://nightfarmer.github.io/public/static/image/gridanim1.gif" alt="grid动画"> <img src="http://nightfarmer.github.io/public/static/image/gridanim2.gif" alt="瀑布流动画"><br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RecyclerView/">RecyclerView</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/24/RecyAnim/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Kotlin-anko" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -777,66 +842,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JitpackUse" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/16/JitpackUse/" class="article-date">
-      <time datetime="2016-03-16T07:26:17.000Z" itemprop="datePublished">2016-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/16/JitpackUse/">发布自己的开源库到jitpack供gradle依赖调用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gradle/">gradle</a></li></ul>
     </div>
 
       
