@@ -3,15 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>使用RecyclerView实现无限滚动瀑布流 | NightFarmer&#39;s Blog</title>
+  <title>设计一个带有动画的可用展开/折叠的列表控件 | NightFarmer&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="使用RecyclerView实现无限滚动瀑布流">
-<meta property="og:url" content="http://nightfarmer.github.io/2015/06/08/Recycler-pbl/index.html">
+  <meta name="description" content="今天看到某个订餐app中有一个折叠菜品详情的特效，看起来非常不错，反编译源码之后发现是使用ListView做的。但是最近对RecyclerView这个控件情有独钟，于是就尝试着使用RecyclerView进行了实现。记录一下：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计一个带有动画的可用展开/折叠的列表控件">
+<meta property="og:url" content="http://nightfarmer.github.io/2016/03/19/ExpandAnimList/index.html">
 <meta property="og:site_name" content="NightFarmer's Blog">
-<meta property="og:updated_time" content="2016-07-14T01:06:53.154Z">
+<meta property="og:description" content="今天看到某个订餐app中有一个折叠菜品详情的特效，看起来非常不错，反编译源码之后发现是使用ListView做的。但是最近对RecyclerView这个控件情有独钟，于是就尝试着使用RecyclerView进行了实现。记录一下：">
+<meta property="og:image" content="http://nightfarmer.github.io/public/static/image/ExpandAnimList.gif">
+<meta property="og:image" content="http://nightfarmer.github.io/public/static/image/ExpandAnimList_bug.gif">
+<meta property="og:updated_time" content="2016-07-19T06:50:20.084Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用RecyclerView实现无限滚动瀑布流">
+<meta name="twitter:title" content="设计一个带有动画的可用展开/折叠的列表控件">
+<meta name="twitter:description" content="今天看到某个订餐app中有一个折叠菜品详情的特效，看起来非常不错，反编译源码之后发现是使用ListView做的。但是最近对RecyclerView这个控件情有独钟，于是就尝试着使用RecyclerView进行了实现。记录一下：">
+<meta name="twitter:image" content="http://nightfarmer.github.io/public/static/image/ExpandAnimList.gif">
   
     <link rel="alternative" href="/atom.xml" title="NightFarmer&#39;s Blog" type="application/atom+xml">
   
@@ -219,11 +225,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Recycler-pbl" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ExpandAnimList" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/08/Recycler-pbl/" class="article-date">
-      <time datetime="2015-06-08T07:26:17.000Z" itemprop="datePublished">2015-06-08</time>
+      <a href="/2016/03/19/ExpandAnimList/" class="article-date">
+      <time datetime="2016-03-19T02:46:44.000Z" itemprop="datePublished">2016-03-19</time>
 </a>
     </div>
   
@@ -236,7 +242,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      使用RecyclerView实现无限滚动瀑布流
+      设计一个带有动画的可用展开/折叠的列表控件
     </h1>
   
 
@@ -251,7 +257,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RecyclerView/">RecyclerView</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/列表动画，RecyclerView/">列表动画，RecyclerView</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -261,7 +267,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p>今天看到某个订餐app中有一个折叠菜品详情的特效，看起来非常不错，反编译源码之后发现是使用ListView做的。<br>但是最近对RecyclerView这个控件情有独钟，于是就尝试着使用RecyclerView进行了实现。<br>记录一下：</p>
+<p><img src="http://nightfarmer.github.io/public/static/image/ExpandAnimList.gif" alt="展开/折叠效果"></p>
+<a id="more"></a>
+<p>对于普通列表样式的RecyclerView我们再熟悉不过了，Activity+Adapter。<br>如果需要实现刚才效果，我们需要一个特殊的Item的布局文件：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_margin</span>=<span class="string">"10dp"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:clickable</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_title"</span></div><div class="line">        <span class="attr">android:background</span>=<span class="string">"#7acaec"</span></div><div class="line">        <span class="attr">android:padding</span>=<span class="string">"10dp"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"标题"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">RelativeLayout</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/layout_content"</span></div><div class="line">        <span class="attr">android:background</span>=<span class="string">"#ffdc8a"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line">            <span class="attr">android:layout_centerInParent</span>=<span class="string">"true"</span></div><div class="line">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">            <span class="attr">android:layout_height</span>=<span class="string">"100dp"</span>&gt;</div><div class="line">            <span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line">                <span class="attr">android:layout_gravity</span>=<span class="string">"center"</span></div><div class="line">                <span class="attr">android:src</span>=<span class="string">"@mipmap/ic_launcher"</span></div><div class="line">                <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">            <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">                <span class="attr">android:layout_gravity</span>=<span class="string">"center"</span></div><div class="line">                <span class="attr">android:text</span>=<span class="string">"我是一堆内容，我是一堆内容，我是一堆内容，我是一堆内容"</span></div><div class="line">                <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">                <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line">        <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这个布局分为上下两块儿，title部分是折叠时候显示的内容，这里我们只定义了一个TextView，如果有特殊需求可以设定一个容器。<br>下面的layout_content是展开时候所显示的布局，如果不考虑动画的情况下，我们只需要设置layout_content是否可见即可。</p>
+<p>接下来我们就要考虑动画的实现了。<br>比较直接的做法，在title的点击监听里start一个Animator，看上去好像并没有什么不对，然而如果真的这样写了的话，我们会得到这样的结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ViewCompat.animate(view).scaleY(<span class="number">0</span>).start();</div></pre></td></tr></table></figure></p>
+<p><img src="http://nightfarmer.github.io/public/static/image/ExpandAnimList_bug.gif" alt="异常的折叠效果"><br>动画虽然执行了，但是整个列表并没有重新布局！</p>
+<p>这时候我们需要用另外一种方法来实现动画了，ValueAnimator。<br>使用ValueAnimator设置数值动画执行的起止数值，并在数变更监听中更新itemview的尺寸并通知父容器重新布局。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> origHeight = view.getHeight();</div><div class="line">ValueAnimator animator = ValueAnimator.ofInt(origHeight, <span class="number">0</span>);</div><div class="line">animator.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() &#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator valueAnimator)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> value = (Integer) valueAnimator.getAnimatedValue();</div><div class="line">        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();</div><div class="line">        layoutParams.height = value;</div><div class="line">        view.setLayoutParams(layoutParams);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">animator.addListener(<span class="keyword">new</span> AnimatorListenerAdapter() &#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animator animator)</span> </span>&#123;</div><div class="line">        view.setVisibility(View.GONE);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">animator.start();</div></pre></td></tr></table></figure>
+<p>这样就能在动画执行期间实时的更新整个列表的布局了<br>接下来我们需要让itemview支持点击折叠操作，假设我们的所有item初始情况下都是折叠的状态，定义一个Map<integer, view=""> expandedViewMap，用来保存已经展开的item对应的position和layout_content，对于一个position，如果在expandedViewMap中存在key，则这个item是折叠状态，反之这是展开状态。<br>修改itemview的onclick回调方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">boolean</span> expanded = expandedViewMap.containsKey(position);</div><div class="line"><span class="keyword">if</span> (expanded) &#123;</div><div class="line">    expandedViewMap.remove(position);</div><div class="line">    <span class="comment">//TODO 执行收缩动画</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    expandedViewMap.put(position, layout_content);</div><div class="line">    <span class="comment">//TODO 执行展开动画</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></integer,></p>
+<p>收缩动画就是上面那段，然后我们还需要实现一个展开的动画<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">view.setVisibility(View.VISIBLE);</div><div class="line"><span class="keyword">final</span> <span class="keyword">int</span> widthSpec = View.MeasureSpec.makeMeasureSpec(<span class="number">0</span>, View.MeasureSpec.UNSPECIFIED);</div><div class="line"><span class="keyword">final</span> <span class="keyword">int</span> heightSpec = View.MeasureSpec.makeMeasureSpec(<span class="number">0</span>, View.MeasureSpec.UNSPECIFIED);</div><div class="line">view.measure(widthSpec, heightSpec);</div><div class="line"></div><div class="line">ValueAnimator animator = ValueAnimator.ofInt(<span class="number">0</span>, view.getMeasuredHeight());</div><div class="line">animator.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() &#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator valueAnimator)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> value = (Integer) valueAnimator.getAnimatedValue();</div><div class="line">        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();</div><div class="line">        layoutParams.height = value;</div><div class="line">        view.setLayoutParams(layoutParams);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">animator.start();</div></pre></td></tr></table></figure></p>
+<p>在这短代码里我们首先指定layout_content不指定宽高的情况再次测量尺寸，并拿到测量后的高度，其实就是layout_content在wrap_content情况下的高度。创建一个从0到这个高度的动画，并在回调中更新布局。<br>这个时候item以及可用响应我们的点击事件，并执行相应的展开和折叠动画了，但是我们还有一个地方需要做处理，在RecyclerView中的ItemView会随着列表的滚动对其进行回收和复现，我们需要在ItemView被回收利用的时候对它的状态进行初始化，也就是在onBindViewHolder中设置layout_content的高度及Visible：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBindViewHolder</span><span class="params">(MyHolder holder, <span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">    <span class="comment">//....</span></div><div class="line">    <span class="keyword">boolean</span> expanded = expandedViewMap.containsKey(position);</div><div class="line">    <span class="keyword">if</span> (expanded) &#123;</div><div class="line">        <span class="comment">//设置layout_content为展开状态</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//设置layout_content为折叠状态</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在注释代码的地方对layout_content的状态进行重置，这样就可用在滚动list的时候仍然保持正确的展开状态达到开篇的那种效果了。</p>
+
       
     </div>
     
@@ -273,15 +292,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/06/23/Recycler-Grid/">
-                    使用RecyclerView实现Grid节点的拖拽排序
+                <a href="/2016/03/20/js-android/">
+                    使用JavaScript反射调用Android应用Native代码
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/06/03/RecyclerView/">
-                    RecyclerView的使用
+                <a href="/2016/03/16/JitpackUse/">
+                    发布自己的开源库到jitpack供gradle依赖调用
                 </a>
             </div>
         
@@ -356,7 +375,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2015/06/08/Recycler-pbl/" data-title="使用RecyclerView实现无限滚动瀑布流" data-url="http://nightfarmer.github.io/2015/06/08/Recycler-pbl/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/19/ExpandAnimList/" data-title="设计一个带有动画的可用展开/折叠的列表控件" data-url="http://nightfarmer.github.io/2016/03/19/ExpandAnimList/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -380,7 +399,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/06/23/Recycler-Grid/" title="上一篇: 使用RecyclerView实现Grid节点的拖拽排序">
+            <a href="/2016/03/20/js-android/" title="上一篇: 使用JavaScript反射调用Android应用Native代码">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -388,7 +407,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/06/03/RecyclerView/" title="下一篇: RecyclerView的使用">
+            <a href="/2016/03/16/JitpackUse/" title="下一篇: 发布自己的开源库到jitpack供gradle依赖调用">
                 <i class="fa fa-angle-right"></i>
             </a>
         
