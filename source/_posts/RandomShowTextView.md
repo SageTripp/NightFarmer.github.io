@@ -1,7 +1,7 @@
 ---
 title: 实现一个随机字符显现/隐藏的TextView
 date: 2016-03-13 12:46:44
-tags: [Android, 动画，自定义控件]
+tags: [Android, 动画, 自定义控件]
 category: Android
 ---
 

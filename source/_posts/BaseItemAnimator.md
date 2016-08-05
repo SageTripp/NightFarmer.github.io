@@ -1,7 +1,7 @@
 ---
 title: 通过扩展ItemAnimator实现对Item的创建/移除动画进行抽象封装
 date: 2016-03-13 12:46:44
-tags: [Android, 列表动画，RecyclerView]
+tags: [Android, 列表动画, RecyclerView]
 category: Android
 ---
 

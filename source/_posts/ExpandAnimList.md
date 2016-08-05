@@ -1,7 +1,7 @@
 ---
 title: 设计一个带有动画的可用展开/折叠的列表控件
 date: 2016-03-19 10:46:44
-tags: [Android, 列表动画，RecyclerView]
+tags: [Android, 列表动画, RecyclerView]
 category: Android
 ---
 

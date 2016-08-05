@@ -1,7 +1,7 @@
 ---
 title: 造一个“轮子”
 date: 2016-08-03 11:07:47
-tags: [Android, 自定义控件]
+tags: [Android, 自定义控件, 动画]
 category: Android
 ---
 
