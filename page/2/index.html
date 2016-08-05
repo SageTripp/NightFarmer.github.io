@@ -145,7 +145,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AS/" style="font-size: 12px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 14px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 18px;">RecyclerView</a> <a href="/tags/ViewPager/" style="font-size: 10px;">ViewPager</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 12px;">okhttp</a> <a href="/tags/列表动画，RecyclerView/" style="font-size: 16px;">列表动画，RecyclerView</a> <a href="/tags/动画，自定义控件/" style="font-size: 10px;">动画，自定义控件</a> <a href="/tags/干货/" style="font-size: 12px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 18px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
+                        <a href="/tags/AS/" style="font-size: 11.67px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 13.33px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 16.67px;">RecyclerView</a> <a href="/tags/ViewPager/" style="font-size: 10px;">ViewPager</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 11.67px;">okhttp</a> <a href="/tags/列表动画，RecyclerView/" style="font-size: 15px;">列表动画，RecyclerView</a> <a href="/tags/动画，自定义控件/" style="font-size: 10px;">动画，自定义控件</a> <a href="/tags/干货/" style="font-size: 11.67px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 18.33px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
                     </div>
                 </section>
                 
@@ -222,6 +222,71 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-EventBus" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/13/EventBus/" class="article-date">
+      <time datetime="2016-04-13T03:48:15.000Z" itemprop="datePublished">2016-04-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/13/EventBus/">通过EventBus实现android各组件间数据通讯</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>EventBus就是publish/subscribe消息总线，主要功能是替代Intent,Handler,BroadCast在Fragment，Activity，Service，线程之间传递消息。<br>它的三要素：<br>Event：事件。可以是任何的对象。<br>Subscriber：事件订阅者，接收特定的事件。方法以onEvent**开头，一共有四个方法onEvent，onEventMainThread，onEventBackgroundThread，onEventAsync。它们之间的区别在于在不同的线程。等会会有一一举例。<br>Publisher:事件发布者，用于通知Subscriber有事件发生，可以在任何的地方发布事件。使用也是简单，只要调用post(Object)方法就可以了。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EventBus/">EventBus</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/13/EventBus/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-Kotlin-yf" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -595,71 +660,6 @@
 
 
   
-    <article id="post-RandomShowTextView" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/13/RandomShowTextView/" class="article-date">
-      <time datetime="2016-03-13T04:46:44.000Z" itemprop="datePublished">2016-03-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/13/RandomShowTextView/">实现一个随机字符显现/隐藏的TextView</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>偶然看到一个非常不错的特效，尝试着实现了并记录下开发过程。<br>效果图：<br><img src="http://nightfarmer.github.io/public/static/image/RandomShowTextView.gif" alt="随机字符显现/隐藏"></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画，自定义控件/">动画，自定义控件</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/13/RandomShowTextView/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-BaseItemAnimator" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -709,6 +709,71 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/13/BaseItemAnimator/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-RandomShowTextView" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/13/RandomShowTextView/" class="article-date">
+      <time datetime="2016-03-13T04:46:44.000Z" itemprop="datePublished">2016-03-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/13/RandomShowTextView/">实现一个随机字符显现/隐藏的TextView</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>偶然看到一个非常不错的特效，尝试着实现了并记录下开发过程。<br>效果图：<br><img src="http://nightfarmer.github.io/public/static/image/RandomShowTextView.gif" alt="随机字符显现/隐藏"></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画，自定义控件/">动画，自定义控件</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/13/RandomShowTextView/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -776,66 +841,6 @@
         <p class="article-more-link">
           <a  href="/2016/03/13/ItemAnimator/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-MoneyInput" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/12/MoneyInput/" class="article-date">
-      <time datetime="2016-03-12T12:16:17.000Z" itemprop="datePublished">2016-03-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/12/MoneyInput/">android实现限制数值输入范围的金额EditText控制</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义控件/">自定义控件</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
