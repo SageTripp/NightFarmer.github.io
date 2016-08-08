@@ -145,7 +145,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AS/" style="font-size: 11.67px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 13.33px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 18.33px;">RecyclerView</a> <a href="/tags/ViewPager/" style="font-size: 10px;">ViewPager</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 11.67px;">okhttp</a> <a href="/tags/列表动画/" style="font-size: 15px;">列表动画</a> <a href="/tags/动画/" style="font-size: 13.33px;">动画</a> <a href="/tags/干货/" style="font-size: 11.67px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 16.67px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
+                        <a href="/tags/AS/" style="font-size: 11.67px;">AS</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Doc/" style="font-size: 10px;">Doc</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/File/" style="font-size: 10px;">File</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Kotlin/" style="font-size: 13.33px;">Kotlin</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 18.33px;">RecyclerView</a> <a href="/tags/ViewPager/" style="font-size: 10px;">ViewPager</a> <a href="/tags/cocos/" style="font-size: 10px;">cocos</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/okhttp/" style="font-size: 11.67px;">okhttp</a> <a href="/tags/列表动画/" style="font-size: 15px;">列表动画</a> <a href="/tags/动画/" style="font-size: 15px;">动画</a> <a href="/tags/干货/" style="font-size: 11.67px;">干货</a> <a href="/tags/数据存储/" style="font-size: 10px;">数据存储</a> <a href="/tags/自定义控件/" style="font-size: 16.67px;">自定义控件</a> <a href="/tags/适配/" style="font-size: 10px;">适配</a>
                     </div>
                 </section>
                 
@@ -222,6 +222,72 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-ItemAnimator" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/13/ItemAnimator/" class="article-date">
+      <time datetime="2016-03-13T02:46:44.000Z" itemprop="datePublished">2016-03-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/13/ItemAnimator/">解析DefaultItemAnimator源码了解ItemAnimator动画处理器实现</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>之前提到过RecyclerView给我们提供了插拔式的，高度解耦的，异常灵活的数据集合展示控件。<br>这次会根据google提供的抽象的插拔接口来对RecyclerView数据集合item的创建/移除进行动画扩展，<br>并在此基础上对次扩展进行再次的抽象封装以适用于日常的使用。<br>依照管理，效果图：</p>
+<p><img src="http://nightfarmer.github.io/public/static/image/leftInAnimator.gif" alt="从左划入动画效果"> <img src="http://nightfarmer.github.io/public/static/image/inoutAnimator.gif" alt="从小变大动画效果"></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RecyclerView/">RecyclerView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/列表动画/">列表动画</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/13/ItemAnimator/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-MoneyInput" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -777,73 +843,6 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RecyclerView/">RecyclerView</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RecyclerView" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/06/03/RecyclerView/" class="article-date">
-      <time datetime="2015-06-03T10:25:07.000Z" itemprop="datePublished">2015-06-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/03/RecyclerView/">RecyclerView的使用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>该控件用于在有限的窗口中展示大量数据集，其实这样功能的控件我们并不陌生，例如：ListView、GridView。<br>那么有了ListView、GridView为什么还需要RecyclerView这样的控件呢？整体上看RecyclerView架构，提供了一种插拔式的体验，高度的解耦，异常的灵活，<br>通过设置它提供的不同LayoutManager，ItemDecoration , ItemAnimator实现高度自由的效果。</p>
-<blockquote>
-<p>RecyclerView is a more advanced and flexible version of ListView.<br>This widget is a container for large sets of views that can be recycled and scrolled very efficiently.<br>Use the RecyclerView widget when you have lists with elements that change dynamically.<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RecyclerView/">RecyclerView</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/06/03/RecyclerView/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
